@@ -1,8 +1,8 @@
 // Use the filter or find array methods to solve these problems
 
-/* 
-Input:
-[
+
+// Input:
+ const groceryList = [
     { 
         id: 'apple',
         price: 3,
@@ -33,9 +33,9 @@ Input:
         quantity: 4,
         category: 'dairy'
     },
-]
+];
 
-Output: 
+/*Output: 
 [
     { 
         id: 'milk',
@@ -49,11 +49,12 @@ Output:
         quantity: 4,
         category: 'dairy'
     },
-]
-*/
+]*/
 
 export function getAllDairy(arr) {
-    return [];
+   const newArr =  arr.filter( objK => 
+        objK.category === 'dairy')
+    return newArr
 }
 
 /*
@@ -69,7 +70,9 @@ Output:
 */
 
 export function getAllFruitsThatCostMoreThanTwo(arr) {
-    return [];
+   const newArr = arr.filter(objK=> 
+        objK.category === 'fruit' && objK.price > 2);
+   return newArr;
 }
 
 
@@ -84,9 +87,11 @@ Output:
 */
 
 export function findTheCheese(arr) {
-    return [];
+    const dairyArr = getAllDairy(arr);
+    const newArr = dairyArr.filter(objK =>
+        objK.id === 'cheese');
+    return newArr;
 }
-
 
 /*
 Output: 
@@ -94,5 +99,14 @@ Output:
 */
 
 export function listNamesOfAllFruits(arr) {
-    return [];
+        let namesArr = [];
+      const newArr = arr.filter(objK => 
+         objK.category === 'fruit' )
+
+         for(let i of newArr){
+            namesArr.push(i.id);
+         }
+         
+   return namesArr;
 }
+
