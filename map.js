@@ -36,7 +36,6 @@ Output:
 export function makeArrayWithIsHungry(arr) {
     return arr.map(e => ({...e, isHungry: true})); // used spread operator to copy existing arr and add the new key to it.
 }
-console.log( makeArrayWithIsHungry(animals));
 /*
 Output:
 
@@ -48,8 +47,15 @@ Output:
 ]*/
 
 export function makeShoutingArray(arr) {
-    return [];
+  const newArr = arr.map(ele => {
+        return{
+            name: ele.name.toUpperCase(),
+            type: ele.type
+        }
+    })
+    return newArr;
 }
+
 
 
 /*
@@ -59,9 +65,11 @@ Output:
 */
 
 export function makeStringArray(arr) {
-    return [];
+    const newArr =   arr.map(element => {
+        return element.name + element.type;
+    })
+    return newArr;
 }
-
 /*
 Output:
 
@@ -85,5 +93,10 @@ Output:
 */
 
 export function makeArrayOfArraysOfArrays(arr) {
-    return [];
+    const newArr =   arr.map(element => {
+        return Object.entries(element);   // turns keys and values of an objecnt into an array
+            
+    })
+    return newArr;
 }
+
