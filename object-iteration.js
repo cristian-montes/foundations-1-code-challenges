@@ -1,13 +1,12 @@
 // user Object.values and Object.key to solve these problems!
 
-/*
-Input: 
-{
+// Input: 
+const objeto = {
     wheels: 8,
     type: 'truck',
     goes: 'vroom',
 }
-*/
+
 
 
 /*
@@ -24,8 +23,11 @@ etc
 */
 
 export function makeWeirdStringFromKeys(someObject) {
-    return '';
+    const newArr = Object.keys(someObject);
+    return newArr;
 }
+  
+
 
 
 /*
@@ -38,8 +40,10 @@ Output:
 */
 
 export function makeMoreScreamingKeys(someObject) {
-    return {};
-}
+    return Object.assign(...Object.keys(someObject).map(key => 
+        ({[key.toUpperCase()]: someObject[key]
+        })));
+    }
 
 /*
 Output:
@@ -51,5 +55,6 @@ Output:
 */
 
 export function makeTuples(someObject) {
-    return [];
+    const newArr = Object.entries(someObject);
+    return newArr;  
 }
