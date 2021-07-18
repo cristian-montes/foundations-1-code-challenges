@@ -58,4 +58,3 @@ export function makeTuples(someObject) {
     const newArr = Object.entries(someObject);
     return newArr;  
 }
-console.log(makeTuples(objeto)); 

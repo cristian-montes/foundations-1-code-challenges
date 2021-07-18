@@ -1,9 +1,9 @@
 // solve these problems using any method you like!
 
-/* 
 
-Input:
-[
+
+
+const fruits = [
     { 
         id: 'apple',
         price: 3,
@@ -36,7 +36,6 @@ Input:
     },
 ]
 
-*/
 
 /*
 Output: 
@@ -50,7 +49,15 @@ Output:
 */
 
 export function organizePricesByKey(arr) {
-    return {};
+     const newArr = arr.map(e =>  {
+         return {
+             [e.id]: e.price
+            }
+     })
+    const newObj = newArr.reduce(function(r, c) {
+        return Object.assign(r, c);
+    }, {});
+    return newObj;
 }
 
 /*
@@ -90,9 +97,15 @@ Output:
 */
 
 export function makeAHashMap(arr) {
-    return {};
+    const initialValue = {};
+    return arr.reduce((obj, item) => {
+        return{
+            ...obj,
+            [item['id']] : item,
+        };
+    }, initialValue)
 }
-
+//  console.log(makeAHashMap(fruits));
 
 /*
 Output: 
@@ -104,5 +117,6 @@ Output:
 */
 
 export function countByCategory(arr) {
-    return {};
 }
+
+console.log(countByCategory(fruits));
