@@ -94,7 +94,7 @@ Output:
 
 export function makeArrayOfArraysOfArrays(arr) {
     const newArr =   arr.map(element => {
-        return Object.entries(element);   // turns keys and values of an objecnt into an array
+        return Object.entries(element);   // turns keys and values of an object into an array
             
     })
     return newArr;
